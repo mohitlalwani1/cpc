@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Create Your Poll</title>
+  <link rel="stylesheet" href="page3.css">
+</head>
+<body>
+  <div class="container">
+    <div class="left-panel">
+      <h1>Create Your Poll</h1>
+      <p>Craft questions that matter to your campus community.</p>
+      <ul>
+        <li><strong>⚡ Quick & Easy</strong><br>Create a poll in less than a minute with our simple form.</li>
+        <li><strong>📤 Share Instantly</strong><br>Share your poll via QR code or link.</li>
+        <li><strong>📊 Real-time Results</strong><br>See visualized results instantly.</li>
+      </ul>
+    </div>
+
+    <div class="right-panel">
+      <h2>New Poll Form</h2>
+      <form id="pollForm">
+        <label>Poll Question</label>
+        <input type="text" id="question" required>
+
+        <label>Description (Optional)</label>
+        <textarea id="description" rows="3"></textarea>
+
+        <div id="optionsContainer">
+          <input type="text" name="option" placeholder="Option 1" required>
+          <input type="text" name="option" placeholder="Option 2" required>
+        </div>
+
+        <button type="button" id="addOption">+ Add Option</button>
+
+        <div class="buttons">
+          <button type="submit">Create Poll</button>
+          <button type="reset">Reset</button>
+        </div>
+
+        <p id="successMessage" class="hidden">Poll created successfully ✅</p>
+      </form>
+    </div>
+  </div>
+
+  <script src="page3.js"></script>
+</body>
+</html>
