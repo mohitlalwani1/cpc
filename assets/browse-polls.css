@@ -1,0 +1,433 @@
+/* Browse Polls Page Styles */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%);
+    min-height: 100vh;
+    color: #1f2937;
+}
+
+/* Top Navigation */
+.top-nav {
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(10px);
+    border-bottom: 1px solid #e5e7eb;
+    padding: 1rem 2rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+.nav-brand {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+}
+
+.nav-brand img {
+    width: 40px;
+    height: 40px;
+}
+
+.nav-brand h2 {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: #4f46e5;
+    margin: 0;
+}
+
+.nav-links {
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: #6b7280;
+    font-weight: 500;
+    padding: 0.5rem 1rem;
+    border-radius: 0.5rem;
+    transition: all 0.3s ease;
+}
+
+.nav-links a:hover {
+    color: #4f46e5;
+    background: rgba(79, 70, 229, 0.1);
+}
+
+/* Container */
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 2rem;
+}
+
+/* Page Header */
+.page-header {
+    text-align: center;
+    margin-bottom: 3rem;
+    padding: 2rem 0;
+}
+
+.page-header h1 {
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: #1f2937;
+    margin-bottom: 1rem;
+}
+
+.page-header p {
+    font-size: 1.2rem;
+    color: #6b7280;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+/* Polls Grid */
+.polls-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+    gap: 2rem;
+}
+
+/* No Polls State */
+.no-polls {
+    grid-column: 1 / -1;
+    text-align: center;
+    padding: 4rem 2rem;
+    background: white;
+    border-radius: 1.5rem;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+    border: 1px solid #e5e7eb;
+}
+
+.no-polls i {
+    font-size: 4rem;
+    color: #d1d5db;
+    margin-bottom: 1.5rem;
+}
+
+.no-polls h3 {
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: #374151;
+    margin-bottom: 1rem;
+}
+
+.no-polls p {
+    color: #6b7280;
+    margin-bottom: 2rem;
+}
+
+.create-btn {
+    display: inline-block;
+    text-decoration: none;
+    background: linear-gradient(135deg, #4f46e5, #7c3aed);
+    color: white;
+    padding: 1rem 2rem;
+    border-radius: 0.75rem;
+    font-weight: 600;
+    transition: all 0.3s ease;
+}
+
+.create-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 25px rgba(79, 70, 229, 0.4);
+}
+
+/* Poll Cards */
+.poll-card {
+    background: white;
+    border-radius: 1.5rem;
+    padding: 2rem;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+    border: 1px solid #e5e7eb;
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.poll-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 4px;
+    background: linear-gradient(90deg, #4f46e5, #7c3aed, #ec4899);
+}
+
+.poll-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.15);
+}
+
+/* Poll Header */
+.poll-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 1.5rem;
+}
+
+.poll-header h3 {
+    font-size: 1.25rem;
+    font-weight: 600;
+    color: #1f2937;
+    line-height: 1.4;
+    flex: 1;
+    margin-right: 1rem;
+}
+
+.poll-votes {
+    background: linear-gradient(135deg, #4f46e5, #7c3aed);
+    color: white;
+    padding: 0.5rem 1rem;
+    border-radius: 2rem;
+    font-size: 0.875rem;
+    font-weight: 600;
+    white-space: nowrap;
+}
+
+/* Poll Description */
+.poll-description {
+    color: #6b7280;
+    line-height: 1.6;
+    margin-bottom: 1.5rem;
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}
+
+/* Poll Meta */
+.poll-meta {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1.5rem;
+    font-size: 0.875rem;
+    color: #6b7280;
+}
+
+.creator {
+    font-weight: 600;
+    color: #4f46e5;
+}
+
+.date {
+    color: #9ca3af;
+}
+
+/* Poll Actions */
+.poll-actions {
+    display: flex;
+    gap: 1rem;
+}
+
+.vote-btn {
+    flex: 1;
+    text-decoration: none;
+    background: linear-gradient(135deg, #4f46e5, #7c3aed);
+    color: white;
+    padding: 0.875rem 1.5rem;
+    border-radius: 0.75rem;
+    font-weight: 600;
+    text-align: center;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+}
+
+.vote-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 25px rgba(79, 70, 229, 0.4);
+}
+
+.results-btn {
+    flex: 1;
+    text-decoration: none;
+    background: #f8fafc;
+    color: #4f46e5;
+    border: 2px solid #e5e7eb;
+    padding: 0.875rem 1.5rem;
+    border-radius: 0.75rem;
+    font-weight: 600;
+    text-align: center;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+}
+
+.results-btn:hover {
+    background: #4f46e5;
+    color: white;
+    border-color: #4f46e5;
+    transform: translateY(-2px);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .nav-links {
+        gap: 1rem;
+    }
+    
+    .nav-links a {
+        padding: 0.5rem;
+        font-size: 0.875rem;
+    }
+    
+    .container {
+        padding: 1rem;
+    }
+    
+    .page-header {
+        margin-bottom: 2rem;
+        padding: 1rem 0;
+    }
+    
+    .page-header h1 {
+        font-size: 2rem;
+    }
+    
+    .page-header p {
+        font-size: 1rem;
+    }
+    
+    .polls-grid {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+    }
+    
+    .poll-card {
+        padding: 1.5rem;
+    }
+    
+    .poll-header {
+        flex-direction: column;
+        gap: 1rem;
+        align-items: flex-start;
+    }
+    
+    .poll-header h3 {
+        margin-right: 0;
+    }
+    
+    .poll-actions {
+        flex-direction: column;
+    }
+    
+    .poll-meta {
+        flex-direction: column;
+        gap: 0.5rem;
+        align-items: flex-start;
+    }
+}
+
+@media (max-width: 480px) {
+    .top-nav {
+        padding: 1rem;
+    }
+    
+    .nav-brand h2 {
+        font-size: 1.25rem;
+    }
+    
+    .container {
+        padding: 0.5rem;
+    }
+    
+    .page-header h1 {
+        font-size: 1.75rem;
+    }
+    
+    .poll-card {
+        padding: 1rem;
+        border-radius: 1rem;
+    }
+    
+    .poll-header h3 {
+        font-size: 1.1rem;
+    }
+    
+    .vote-btn,
+    .results-btn {
+        padding: 0.75rem 1rem;
+        font-size: 0.875rem;
+    }
+    
+    .no-polls {
+        padding: 2rem 1rem;
+    }
+    
+    .no-polls i {
+        font-size: 3rem;
+    }
+    
+    .no-polls h3 {
+        font-size: 1.25rem;
+    }
+}
+
+/* Animation for poll cards */
+.poll-card {
+    opacity: 0;
+    transform: translateY(20px);
+    animation: slideUp 0.6s ease forwards;
+}
+
+.poll-card:nth-child(1) { animation-delay: 0.1s; }
+.poll-card:nth-child(2) { animation-delay: 0.2s; }
+.poll-card:nth-child(3) { animation-delay: 0.3s; }
+.poll-card:nth-child(4) { animation-delay: 0.4s; }
+.poll-card:nth-child(5) { animation-delay: 0.5s; }
+.poll-card:nth-child(6) { animation-delay: 0.6s; }
+
+@keyframes slideUp {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Loading state for buttons */
+.vote-btn.loading,
+.results-btn.loading {
+    pointer-events: none;
+    opacity: 0.7;
+    position: relative;
+}
+
+.vote-btn.loading::after,
+.results-btn.loading::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 16px;
+    height: 16px;
+    margin: -8px 0 0 -8px;
+    border: 2px solid transparent;
+    border-top: 2px solid currentColor;
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
